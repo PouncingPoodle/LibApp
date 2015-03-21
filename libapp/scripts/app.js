@@ -9,6 +9,8 @@
         $http.get("http://localhost/OW/idvProject6/scripts/dbcon.php/book").success(function(data)
         {
             storage.info = data;
+            console.log(storage);
+            console.log("Hi there");
         });
         
     }]);
