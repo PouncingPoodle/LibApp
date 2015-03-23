@@ -5,8 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-        <script src="bootstrap/js/jquery-1.11.2.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="bootstrap/js/jquery-1.11.2.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/custom.css">
         
         <script src="scripts/angular.min.js" type="text/javascript"></script>
@@ -16,10 +16,12 @@
         
         <!-- this worked in class and without any changes just doesn't work anymore -->
         <div ng-controller="BooksController as books">
-            <div ng-repeat="book in books.info">
+            <p>Test before</p>
+            <div ng-repeat="book in (books.info | orderBy: 'title' | limitTo: 3)">
                 <p>{{book.id}}</p>
                 <p>{{book.genre}}</p>
                 <p>{{book.title}}</p>
+                <p>Test after</p>
             </div>
         </div>        
         

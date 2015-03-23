@@ -1,5 +1,5 @@
 <?php
-
+    
     header("Access-Control-Allow-Origin:*");
 
     class Book
@@ -11,9 +11,6 @@
         public $rating;
         public $imgurl;
         public $summary;
-        public $free;
-        public $recent;
-        public $recommend;
     }
 
     require 'Slim/Slim.php';
@@ -26,7 +23,7 @@
         
         //DATABASE - mysql
         // these details is correct on my computer
-        $bookDBconnect = mysqli_connect("localhost","root","mysql","lib_db");
+        $bookDBconnect = mysqli_connect("localhost","root","","lib_db");
         if (mysqli_connect_errno()) {
             echo "Failed to connect to". mysqli_connect_error();
         }
@@ -47,7 +44,6 @@
             $mybook->summary = $row['summary'];
             $mybook->free = $row['free'];
             $mybook->recent = $row['recent'];
-            $mybook->recommend = $row['recommend'];
             
             // this echo shows the correct details
             //echo json_encode($mybook);

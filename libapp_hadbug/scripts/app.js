@@ -6,7 +6,7 @@
     {
         var storage = this;
         //this path is correct on my computer
-        $http.get("http://localhost/libapp/scripts/dbcon.php/book").success(function(data)
+        $http.get("http://localhost/OW/idvProject6/scripts/dbcon.php/book").success(function(data)
         {
             storage.info = data;
             console.log(storage);
@@ -14,8 +14,6 @@
         });
         
     }]);
-
-
 
     app.controller('FilterController', function() 
     {
